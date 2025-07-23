@@ -110,7 +110,8 @@ while (boolEleccion === true) {
                     );
                 }
             }
-            else if (ingredientesEleccion === 3) {
+            else if (ingredientesEleccion === 3){
+                alert("Revise los datos a continuacion")
                 for (let i = 0; i < ingredientesList.length; i++) {
                     alert(
                         "Dato N°: " + (i + 1) + "\n" +
@@ -120,7 +121,132 @@ while (boolEleccion === true) {
                         "Stock: " + ingredientesList[i]['stock']
                     );
                 }
-                let ingredienteActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar:"))
+                let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
+                let ingredienteConfirmacion = prompt(
+                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
+                    "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
+                    "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
+                    "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
+                    "Stock: " + ingredientesList[ingredientesActualizar]['stock'] + "\n" +
+                    "Este es el dato a actualizar?  --1.Si  2.No--   "
+                );
+                let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
+                let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
+                let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
+                let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
+                let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
+                ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+            }
+
+            else if (ingredientesEleccion === 4) {
+                for (let i = 0; i < ingredientesList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + ingredientesList[i]['nombre'] + "\n" +
+                        "Descripción: " + ingredientesList[i]['descripcion'] + "\n" +
+                        "Precio: " + ingredientesList[i]['precio'] + "\n" +
+                        "Stock: " + ingredientesList[i]['stock']
+                    );
+                }
+                let ingredienteEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
+                let ingredienteConfirmacion = prompt(
+                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
+                    "Nombre: " + ingredientesList[ingredienteEliminar]['nombre'] + "\n" +
+                    "Descripción: " + ingredientesList[ingredienteEliminar]['descripcion'] + "\n" +
+                    "Precio: " + ingredientesList[ingredienteEliminar]['precio'] + "\n" +
+                    "Stock: " + ingredientesList[ingredienteEliminar]['stock'] + "\n" +
+                    "Este es el dato eliminar?  --1.Si  2.No--   "
+                );
+                if (ingredienteConfirmacion === 1){
+                    ingredientesList.pop(ingredienteEliminar-1)
+                    alert("Se ha eliminado correctamente")
+                }
+                else if (ingredientesEleccion === 5){
+                    alert("volviendo al anterior menu")
+                    boolIngrediente = false
+                }
+                else{
+                    alert("Ingrese uan opciona valida!!!!!!!!!!!!")
+                }
+            }
+            
+        }
+    }
+
+    else if (menu === 2){
+        while (boolCategoria === true) {
+            let categoriaEleccion = parseInt(prompt('============================================= \n ============Seleccione la lista a editar============ \n ============================================= \n 1. Crear categoria \n 2. Listar categoria \n 3. Actualizar categoria \n 4. Eliminar categoria \n 5. Salir'))
+
+            if (categoriaEleccion === 1) {
+                let nombreCategoria = prompt('Ingrese el nombre de la categoria:   ')
+                let descripcionCategoria = prompt('Ingrese la descripcion de la categoria:   ')
+                let categoriaNuevo = { "nombre": nombreCategoria, "descripcion": descripcionCategoria}
+                ingredientesList.push(categoriaNuevo)
+                alert("La categoria ha sido añadida con exito!")
+            }
+            else if (categoriaEleccion === 2) {
+                for (let i = 0; i < categoriasList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + categoriasList[i]['nombre'] + "\n" +
+                        "Descripción: " + categoriasList[i]['descripcion'] + "\n" );
+                }
+            }
+            else if (categoriaEleccion=== 3){
+                alert("Revise los datos a continuacion")
+                for (let i = 0; i < categoriasList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + categoriasList[i]['nombre'] + "\n" +
+                        "Descripción: " + categoriasList[i]['descripcion'] + "\n" );
+                }
+                let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
+                let ingredienteConfirmacion = prompt(
+                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
+                    "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
+                    "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
+                    "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
+                    "Stock: " + ingredientesList[ingredientesActualizar]['stock'] + "\n" +
+                    "Este es el dato a actualizar?  --1.Si  2.No--   "
+                );
+                let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
+                let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
+                let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
+                let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
+                let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
+                ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+            }
+
+            else if (categoriaEleccion === 4) {
+                for (let i = 0; i < ingredientesList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + ingredientesList[i]['nombre'] + "\n" +
+                        "Descripción: " + ingredientesList[i]['descripcion'] + "\n" +
+                        "Precio: " + ingredientesList[i]['precio'] + "\n" +
+                        "Stock: " + ingredientesList[i]['stock']
+                    );
+                }
+                let ingredienteEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
+                let ingredienteConfirmacion = prompt(
+                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
+                    "Nombre: " + ingredientesList[ingredienteEliminar]['nombre'] + "\n" +
+                    "Descripción: " + ingredientesList[ingredienteEliminar]['descripcion'] + "\n" +
+                    "Precio: " + ingredientesList[ingredienteEliminar]['precio'] + "\n" +
+                    "Stock: " + ingredientesList[ingredienteEliminar]['stock'] + "\n" +
+                    "Este es el dato eliminar?  --1.Si  2.No--   "
+                );
+                if (ingredienteConfirmacion === 1){
+                    ingredientesList.pop(ingredienteEliminar-1)
+                    alert("Se ha eliminado correctamente")
+                }
+                else if (ingredientesEleccion === 5){
+                    alert("volviendo al anterior menu")
+                    boolIngrediente = false
+                }
+                else{
+                    alert("Ingrese uan opciona valida!!!!!!!!!!!!")
+                }
             }
             
         }
