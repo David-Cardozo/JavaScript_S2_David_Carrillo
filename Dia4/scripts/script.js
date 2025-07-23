@@ -123,7 +123,7 @@ while (boolEleccion === true) {
                 }
                 let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
                 let ingredienteConfirmacion = prompt(
-                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
+                    "Dato N°: " + (ingredientesActualizar + 1) + "\n" +
                     "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
                     "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
                     "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
@@ -200,49 +200,40 @@ while (boolEleccion === true) {
                         "Nombre: " + categoriasList[i]['nombre'] + "\n" +
                         "Descripción: " + categoriasList[i]['descripcion'] + "\n" );
                 }
-                let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
-                let ingredienteConfirmacion = prompt(
-                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
-                    "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
-                    "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
-                    "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
-                    "Stock: " + ingredientesList[ingredientesActualizar]['stock'] + "\n" +
+                let categoriasActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
+                let categoriaConfirmacion = prompt(
+                    "Dato N°: " + (categoriasActualizar + 1) + "\n" +
+                    "Nombre: " + categoriasList[categoriasActualizar]['nombre'] + "\n" +
+                    "Descripción: " + categoriasList[categoriasActualizar]['descripcion'] + "\n" +
                     "Este es el dato a actualizar?  --1.Si  2.No--   "
                 );
-                let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
-                let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
-                let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
-                let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
-                let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
-                ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+                let nombreCategoriaNew = prompt('Ingrese el nombre del ingrediente:   ')
+                let descripcionCategoriaNew = prompt('Ingrese la descripcion del ingrediente:   ')
+                let categoriaActualizado = { "nombre": nombreCategoriaNew, "descripcion": descripcionCategoriaNew }
+                categoriasList[categoriasActualizar-1] = categoriaActualizado
             }
 
             else if (categoriaEleccion === 4) {
-                for (let i = 0; i < ingredientesList.length; i++) {
+                for (let i = 0; i < categoriasList.length; i++) {
                     alert(
                         "Dato N°: " + (i + 1) + "\n" +
-                        "Nombre: " + ingredientesList[i]['nombre'] + "\n" +
-                        "Descripción: " + ingredientesList[i]['descripcion'] + "\n" +
-                        "Precio: " + ingredientesList[i]['precio'] + "\n" +
-                        "Stock: " + ingredientesList[i]['stock']
-                    );
+                        "Nombre: " + categoriasList[i]['nombre'] + "\n" +
+                        "Descripción: " + categoriasList[i]['descripcion'] + "\n" );
                 }
-                let ingredienteEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
-                let ingredienteConfirmacion = prompt(
-                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
-                    "Nombre: " + ingredientesList[ingredienteEliminar]['nombre'] + "\n" +
-                    "Descripción: " + ingredientesList[ingredienteEliminar]['descripcion'] + "\n" +
-                    "Precio: " + ingredientesList[ingredienteEliminar]['precio'] + "\n" +
-                    "Stock: " + ingredientesList[ingredienteEliminar]['stock'] + "\n" +
+                let categoriaEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
+                let categoriaConfirmacion = prompt(
+                    "Dato N°: " + (categoriaEliminar + 1) + "\n" +
+                    "Nombre: " + categoriasList[categoriaEliminar]['nombre'] + "\n" +
+                    "Descripción: " + categoriasList[categoriaEliminar]['descripcion'] + "\n" +
                     "Este es el dato eliminar?  --1.Si  2.No--   "
                 );
-                if (ingredienteConfirmacion === 1){
-                    ingredientesList.pop(ingredienteEliminar-1)
+                if (categoriaConfirmacion === 1){
+                    categoriasList.pop(categoriaEliminar-1)
                     alert("Se ha eliminado correctamente")
                 }
-                else if (ingredientesEleccion === 5){
+                else if (categoriaEleccion === 5){
                     alert("volviendo al anterior menu")
-                    boolIngrediente = false
+                    boolCategoria = false
                 }
                 else{
                     alert("Ingrese uan opciona valida!!!!!!!!!!!!")
