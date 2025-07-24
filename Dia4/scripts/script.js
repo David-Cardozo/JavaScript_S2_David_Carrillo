@@ -88,7 +88,14 @@ while (boolEleccion === true) {
 
     if (menu === 1) {
         while (boolIngrediente === true) {
-            let ingredientesEleccion = parseInt(prompt('============================================= \n ============Seleccione la lista a editar============ \n ============================================= \n 1. Crear ingrediente \n 2. Listar ingrediente \n 3. Actualizar ingrediente \n 4. Eliminar ingrediente \n 5. Salir'))
+            let ingredientesEleccion = parseInt(prompt("=============================================" + "\n" +
+                "============Seleccione la lista a editar============" + "\n" +
+                "============================================="  + "\n" +
+                "1. Crear ingrediente" + "\n" +
+                "2. Listar ingredeiente" + "\n" +
+                "3. Actualizar ingrediente" + "\n" +
+                "4. Eliminar ingrediente" + "\n"  +
+                "5. Salir"))
 
             if (ingredientesEleccion === 1) {
                 let nombreIngrediente = prompt('Ingrese el nombre del ingrediente:   ')
@@ -122,20 +129,25 @@ while (boolEleccion === true) {
                     );
                 }
                 let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
-                let ingredienteConfirmacion = prompt(
+                let ingredienteConfirmacion = parseInt(prompt(
                     "Dato N°: " + (ingredientesActualizar + 1) + "\n" +
                     "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
                     "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
                     "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
                     "Stock: " + ingredientesList[ingredientesActualizar]['stock'] + "\n" +
                     "Este es el dato a actualizar?  --1.Si  2.No--   "
-                );
-                let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
-                let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
-                let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
-                let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
-                let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
-                ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+                ));
+                if (ingredienteConfirmacion === 1){
+                    let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
+                    let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
+                    let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
+                    let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
+                    let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
+                    ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+                }
+                else{
+                    alert("Gracias por confirmar")
+                }
             }
 
             else if (ingredientesEleccion === 4) {
@@ -175,7 +187,14 @@ while (boolEleccion === true) {
 
     else if (menu === 2){
         while (boolCategoria === true) {
-            let categoriaEleccion = parseInt(prompt('============================================= \n ============Seleccione la lista a editar============ \n ============================================= \n 1. Crear categoria \n 2. Listar categoria \n 3. Actualizar categoria \n 4. Eliminar categoria \n 5. Salir'))
+            let categoriaEleccion = parseInt(prompt("=============================================" + "\n" +
+                "============Seleccione la lista a editar============" + "\n" +
+                "============================================="  + "\n" +
+                "1. Crear categoria" + "\n" +
+                "2. Listar categoria" + "\n" +
+                "3. Actualizar categoria" + "\n" +
+                "4. Eliminar categoria" + "\n"  +
+                "5. Salir"))
 
             if (categoriaEleccion === 1) {
                 let nombreCategoria = prompt('Ingrese el nombre de la categoria:   ')
@@ -201,16 +220,21 @@ while (boolEleccion === true) {
                         "Descripción: " + categoriasList[i]['descripcion'] + "\n" );
                 }
                 let categoriasActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
-                let categoriaConfirmacion = prompt(
+                let categoriaConfirmacion = parseInt(prompt(
                     "Dato N°: " + (categoriasActualizar + 1) + "\n" +
                     "Nombre: " + categoriasList[categoriasActualizar]['nombre'] + "\n" +
                     "Descripción: " + categoriasList[categoriasActualizar]['descripcion'] + "\n" +
                     "Este es el dato a actualizar?  --1.Si  2.No--   "
-                );
-                let nombreCategoriaNew = prompt('Ingrese el nombre de la categoria:   ')
-                let descripcionCategoriaNew = prompt('Ingrese la descripcion de la categoria:   ')
-                let categoriaActualizado = { "nombre": nombreCategoriaNew, "descripcion": descripcionCategoriaNew }
-                categoriasList[categoriasActualizar-1] = categoriaActualizado
+                ));
+                if (categoriaConfirmacion === 1){
+                    let nombreCategoriaNew = prompt('Ingrese el nombre de la categoria:   ')
+                    let descripcionCategoriaNew = prompt('Ingrese la descripcion de la categoria:   ')
+                    let categoriaActualizado = { "nombre": nombreCategoriaNew, "descripcion": descripcionCategoriaNew }
+                    categoriasList[categoriasActualizar-1] = categoriaActualizado
+                }
+                else{
+                    alert("Gracias por confirmar")
+                }
             }
 
             else if (categoriaEleccion === 4) {
@@ -244,7 +268,14 @@ while (boolEleccion === true) {
     }
     else if (menu === 3){
         while (boolHamburguesa === true) {
-            let hamburguesaEleccion = parseInt(prompt('============================================= \n ============Seleccione la lista a editar============ \n ============================================= \n 1. Crear hamburguesa \n 2. Listar hamburguesa \n 3. Actualizar hamburguesa \n 4. Eliminar hamburguesa \n 5. Salir'))
+            let hamburguesaEleccion = parseInt(prompt("=============================================" + "\n" +
+                "============Seleccione la lista a editar============" + "\n" +
+                "============================================="  + "\n" +
+                "1. Crear hamburguesa" + "\n" +
+                "2. Listar hamburguesa" + "\n" +
+                "3. Actualizar hamburguesa" + "\n" +
+                "4. Eliminar hamburguesa" + "\n"  +
+                "5. Salir"))
 
             if (hamburguesaEleccion === 1) {
                 let listHambur=[]
@@ -288,7 +319,7 @@ while (boolEleccion === true) {
                     );
                 }
                 let hamburguesasActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
-                let hamburguesaConfirmacion = prompt(
+                let hamburguesaConfirmacion = parseInt(prompt(
                     "Dato N°: " + (i + 1) + "\n" +
                         "Nombre: " + hamburguesasList[hamburguesasActualizar]['nombre'] + "\n" +
                         "categoria: " + hamburguesasList[hamburguesasActualizar]['categoria'] + "\n" +
@@ -296,19 +327,24 @@ while (boolEleccion === true) {
                         "precio: " + hamburguesasList[hamburguesasActualizar]['precio'] +
                         "chef: " + hamburguesasList[hamburguesasActualizar]['chef'] +
                     "Este es el dato a actualizar?  --1.Si  2.No--   "
-                );
-                let nombreHamburguesaNew = prompt('Ingrese el nombre de la hamburguesa:   ')
-                let categoriaHamburguesaNew = prompt('Ingrese la categoria de la hamburguesa:   ')
-                let numIngredientesHambuNew = prompt('Ingrese el numero de ingredientes de la hamburguesa:   ')
-                for(let k = 0; k < numIngredientesHambuNew; i++){
-                    let ingredienteHamburguesaNew = prompt("Ingrese el ingredeinte de la hamburguesa")
-                    listHamburNew.push(ingredienteHamburguesaNew)
+                ));
+                if (hamburguesaConfirmacion == 1) {
+                    let nombreHamburguesaNew = prompt('Ingrese el nombre de la hamburguesa:   ')
+                    let categoriaHamburguesaNew = prompt('Ingrese la categoria de la hamburguesa:   ')
+                    let numIngredientesHambuNew = prompt('Ingrese el numero de ingredientes de la hamburguesa:   ')
+                    for(let k = 0; k < numIngredientesHambuNew; i++){
+                        let ingredienteHamburguesaNew = prompt("Ingrese el ingredeinte de la hamburguesa")
+                        listHamburNew.push(ingredienteHamburguesaNew)
+                    }
+                    let ingredientesHamburguesasNew = listHamburNew;
+                    let precioHamburguesaNew = prompt('Ingrese el precio de la hamburguesa:   ')
+                    let chefHamburguesaNew = prompt('Ingrese el chef que hizo la hamburguesa:   ')
+                    let hamburguesaActualizado = {"nombre" : nombreHamburguesaNew, "categoria" : categoriaHamburguesaNew, "ingredientes" : ingredientesHamburguesasNew, "precio" : precioHamburguesaNew, "chef" : chefHamburguesaNew}
+                    hamburguesasList[hamburguesasActualizar-1] = hamburguesaActualizado
                 }
-                let ingredientesHamburguesasNew = listHamburNew;
-                let precioHamburguesaNew = prompt('Ingrese el precio de la hamburguesa:   ')
-                let chefHamburguesaNew = prompt('Ingrese el chef que hizo la hamburguesa:   ')
-                let hamburguesaActualizado = {"nombre" : nombreHamburguesaNew, "categoria" : categoriaHamburguesaNew, "ingredientes" : ingredientesHamburguesasNew, "precio" : precioHamburguesaNew, "chef" : chefHamburguesaNew}
-                hamburguesasList[hamburguesasActualizar-1] = hamburguesaActualizado
+                else{
+                    alert("Gracias por confirmar")
+                }
             }
 
             else if (hamburguesaEleccion === 4) {
@@ -339,6 +375,88 @@ while (boolEleccion === true) {
                 else if (ingredientesEleccion === 5){
                     alert("volviendo al anterior menu")
                     boolHamburguesa = false
+                }
+                else{
+                    alert("Ingrese uan opciona valida!!!!!!!!!!!!")
+                }
+            }
+            
+        }
+    }
+
+    else if (menu === 4) {
+        while (boolChef === true) {
+            let chefEleccion = parseInt(prompt("=============================================" + "\n" +
+                "============Seleccione la lista a editar============" + "\n" +
+                "============================================="  + "\n" +
+                "1. Crear chef" + "\n" +
+                "2. Listar chefs" + "\n" +
+                "3. Actualizar chefs" + "\n" +
+                "4. Eliminar chefs" + "\n"  +
+                "5. Salir"))
+
+            if (chefEleccion === 1) {
+                let nombreChef = prompt('Ingrese el nombre del chef:   ')
+                let especialidadChef = prompt('Ingrese la especialidad del chef:   ')
+                let chefNuevo = { "nombre": nombreChef, "especialidad": especialidadChef}
+                chefsList.push(chefNuevo)
+                alert("El chef ha sido añadida con exito!")
+            }
+            else if (chefEleccion === 2) {
+                for (let i = 0; i < chefsList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + chefsList[i]['nombre'] + "\n" +
+                        "Especialidad: " + chefsList[i]['especialidad'] + "\n" );
+                }
+            }
+            else if (chefEleccion=== 3){
+                alert("Revise los datos a continuacion")
+                for (let i = 0; i < chefsList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + chefsList[i]['nombre'] + "\n" +
+                        "Especialidad: " + chefsList[i]['especialidad'] + "\n" );
+                }
+                let chefActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
+                let chefConfirmacion = parseInt(prompt(
+                    "Dato N°: " + (chefActualizar + 1) + "\n" +
+                    "Nombre: " + chefsList[chefActualizar]['nombre'] + "\n" +
+                    "Especialidad: " + chefsList[chefActualizar]['especialidad'] + "\n" +
+                    "Este es el dato a actualizar?  --1.Si  2.No--   "
+                ));
+                if (chefConfirmacion === 1){
+                    let nombreChefNew = prompt('Ingrese el nombre del chef:   ')
+                    let especialidadChefNew = prompt('Ingrese la especialidad del chef:   ')
+                    let chefActualizado = { "nombre": nombreChefNew, "descripcion": especialidadChefNew }
+                    chefsList[chefActualizar-1] = chefActualizado
+                }
+                else{
+                    alert("Gracias por confirmar")
+                }
+            }
+
+            else if (chefEleccion === 4) {
+                for (let i = 0; i < categoriasList.length; i++) {
+                    alert(
+                        "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + chefsList[i]['nombre'] + "\n" +
+                        "Especialidad: " + chefsList[i]['especialidad'] + "\n" );
+                }
+                let chefEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
+                let chefConfirmacion = prompt(
+                    "Dato N°: " + (chefEliminar + 1) + "\n" +
+                    "Nombre: " + chefsList[chefEliminar]['nombre'] + "\n" +
+                    "Especialidad: " + chefsList[chefEliminar]['especialidad'] + "\n" +
+                    "Este es el dato a eliminar?  --1.Si  2.No--   "
+                );
+                if (chefConfirmacion === 1){
+                    chefsList.pop(chefEliminar-1)
+                    alert("Se ha eliminado correctamente")
+                }
+                else if (chefEleccion === 5){
+                    alert("volviendo al anterior menu")
+                    boolChef = false
                 }
                 else{
                     alert("Ingrese uan opciona valida!!!!!!!!!!!!")
