@@ -247,12 +247,18 @@ while (boolEleccion === true) {
             let hamburguesaEleccion = parseInt(prompt('============================================= \n ============Seleccione la lista a editar============ \n ============================================= \n 1. Crear hamburguesa \n 2. Listar hamburguesa \n 3. Actualizar hamburguesa \n 4. Eliminar hamburguesa \n 5. Salir'))
 
             if (hamburguesaEleccion === 1) {
+                let listHambur=[]
                 let nombreHamburguesa = prompt('Ingrese el nombre de la hamburguesa:   ')
                 let categoriaHamburguesa = prompt('Ingrese la categoria de la hamburguesa:   ')
-                let ingredientesHamburguesa = prompt('Ingrese los ingredeintes de la hamburguesa:   ')
+                let numIngredientesHambu = prompt('Ingrese el numero de ingredientes de la hamburguesa:   ')
+                for(let k = 0; k < numIngredientesHambu; i++){
+                    let ingredienteHamburguesa = prompt("Ingrese el ingredeinte de la hamburguesa")
+                    listHambur.push(ingredienteHamburguesa)
+                }
+                let ingredientesHamburguesas = listHambur;
                 let precioHamburguesa = prompt('Ingrese el precio de las hamburguesas   ')
                 let chefHamburguesa = prompt('Ingrese el chef de la hamburguesa')
-                let hamburguesaNuevo = { "nombre": nombreHamburguesa, "categoria": categoriaHamburguesa, "ingredientes": ingredientesHamburguesa, "precio": precioHamburguesa, "chef" : chefHamburguesa }
+                let hamburguesaNuevo = { "nombre": nombreHamburguesa, "categoria": categoriaHamburguesa, "ingredientes": ingredientesHamburguesas, "precio": precioHamburguesa, "chef" : chefHamburguesa }
                 hamburguesasList.push(hamburguesaNuevo)
                 alert("La nueva hamburguesa ha sido añadido con exito!")
             }
@@ -269,6 +275,7 @@ while (boolEleccion === true) {
                 }
             }
             else if (hamburguesaEleccion === 3){
+                let listHamburNew =[]
                 alert("Revise los datos a continuacion")
                 for (let i = 0; i < hamburguesasList.length; i++) {
                     alert(
@@ -280,49 +287,58 @@ while (boolEleccion === true) {
                         "chef: " + hamburguesasList[i]['chef']
                     );
                 }
-                let ingredientesActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
-                let ingredienteConfirmacion = prompt(
-                    "Dato N°: " + (ingredientesActualizar + 1) + "\n" +
-                    "Nombre: " + ingredientesList[ingredientesActualizar]['nombre'] + "\n" +
-                    "Descripción: " + ingredientesList[ingredientesActualizar]['descripcion'] + "\n" +
-                    "Precio: " + ingredientesList[ingredientesActualizar]['precio'] + "\n" +
-                    "Stock: " + ingredientesList[ingredientesActualizar]['stock'] + "\n" +
+                let hamburguesasActualizar = parseInt(prompt("Ingrese el numero del dato a actualizar"))
+                let hamburguesaConfirmacion = prompt(
+                    "Dato N°: " + (i + 1) + "\n" +
+                        "Nombre: " + hamburguesasList[hamburguesasActualizar]['nombre'] + "\n" +
+                        "categoria: " + hamburguesasList[hamburguesasActualizar]['categoria'] + "\n" +
+                        "ingredientes: " + hamburguesasList[hamburguesasActualizar]['ingredientes'] + "\n" +
+                        "precio: " + hamburguesasList[hamburguesasActualizar]['precio'] +
+                        "chef: " + hamburguesasList[hamburguesasActualizar]['chef'] +
                     "Este es el dato a actualizar?  --1.Si  2.No--   "
                 );
-                let nombreIngredienteNew = prompt('Ingrese el nombre del ingrediente:   ')
-                let descripcionIngredienteNew = prompt('Ingrese la descripcion del ingrediente:   ')
-                let precioIngredienteNew = prompt('Ingrese el precio del ingrediente:   ')
-                let stockIngredienteNew = prompt('Ingrese el stock del ingrediente:   ')
-                let ingredienteActualizado = { "nombre": nombreIngredienteNew, "descripcion": descripcionIngredienteNew, "precio": precioIngredienteNew, "stock": stockIngredienteNew }
-                ingredientesList[ingredientesActualizar-1] = ingredienteActualizado
+                let nombreHamburguesaNew = prompt('Ingrese el nombre de la hamburguesa:   ')
+                let categoriaHamburguesaNew = prompt('Ingrese la categoria de la hamburguesa:   ')
+                let numIngredientesHambuNew = prompt('Ingrese el numero de ingredientes de la hamburguesa:   ')
+                for(let k = 0; k < numIngredientesHambuNew; i++){
+                    let ingredienteHamburguesaNew = prompt("Ingrese el ingredeinte de la hamburguesa")
+                    listHamburNew.push(ingredienteHamburguesaNew)
+                }
+                let ingredientesHamburguesasNew = listHamburNew;
+                let precioHamburguesaNew = prompt('Ingrese el precio de la hamburguesa:   ')
+                let chefHamburguesaNew = prompt('Ingrese el chef que hizo la hamburguesa:   ')
+                let hamburguesaActualizado = {"nombre" : nombreHamburguesaNew, "categoria" : categoriaHamburguesaNew, "ingredientes" : ingredientesHamburguesasNew, "precio" : precioHamburguesaNew, "chef" : chefHamburguesaNew}
+                hamburguesasList[hamburguesasActualizar-1] = hamburguesaActualizado
             }
 
             else if (hamburguesaEleccion === 4) {
-                for (let i = 0; i < ingredientesList.length; i++) {
+                for (let i = 0; i < hamburguesasList.length; i++) {
                     alert(
                         "Dato N°: " + (i + 1) + "\n" +
-                        "Nombre: " + ingredientesList[i]['nombre'] + "\n" +
-                        "Descripción: " + ingredientesList[i]['descripcion'] + "\n" +
-                        "Precio: " + ingredientesList[i]['precio'] + "\n" +
-                        "Stock: " + ingredientesList[i]['stock']
+                        "Nombre: " + hamburguesasList[i]['nombre'] + "\n" +
+                        "categoria: " + hamburguesasList[i]['categoria'] + "\n" +
+                        "ingredientes: " + hamburguesasList[i]['ingredientes'] + "\n" +
+                        "precio: " + hamburguesasList[i]['precio'] +
+                        "chef: " + hamburguesasList[i]['chef']
                     );
                 }
-                let ingredienteEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
-                let ingredienteConfirmacion = prompt(
-                    "Dato N°: " + (ingredienteEliminar + 1) + "\n" +
-                    "Nombre: " + ingredientesList[ingredienteEliminar]['nombre'] + "\n" +
-                    "Descripción: " + ingredientesList[ingredienteEliminar]['descripcion'] + "\n" +
-                    "Precio: " + ingredientesList[ingredienteEliminar]['precio'] + "\n" +
-                    "Stock: " + ingredientesList[ingredienteEliminar]['stock'] + "\n" +
+                let hamburguesaEliminar = parseInt(prompt("Ingrese el numero del dato a eliminar"))
+                let hamburguesaConfirmacion = prompt(
+                    "Dato N°: " + (i + 1) + "\n" +
+                    "Nombre: " + hamburguesasList[hamburguesaEliminar]['nombre'] + "\n" +
+                    "categoria: " + hamburguesasList[hamburguesaEliminar]['categoria'] + "\n" +
+                    "ingredientes: " + hamburguesasList[hamburguesaEliminar]['ingredientes'] + "\n" +
+                    "precio: " + hamburguesasList[hamburguesaEliminar]['precio'] +
+                    "chef: " + hamburguesasList[hamburguesaEliminar]['chef'] +
                     "Este es el dato eliminar?  --1.Si  2.No--   "
                 );
                 if (ingredienteConfirmacion === 1){
-                    ingredientesList.pop(ingredienteEliminar-1)
+                    hamburguesasList.pop(hamburguesaEliminar-1)
                     alert("Se ha eliminado correctamente")
                 }
                 else if (ingredientesEleccion === 5){
                     alert("volviendo al anterior menu")
-                    boolIngrediente = false
+                    boolHamburguesa = false
                 }
                 else{
                     alert("Ingrese uan opciona valida!!!!!!!!!!!!")
